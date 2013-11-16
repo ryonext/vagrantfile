@@ -117,5 +117,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   chef.validation_client_name = "ORGNAME-validator"
   config.berkshelf.enabled = true
 
+  config.vm.provision :chef_solo do |chef|
+    chef.run_list = ["hello", "td-agent"]
+  end
 #  config.vm.
 end
